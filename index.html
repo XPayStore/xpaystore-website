@@ -323,7 +323,7 @@
     </header>
 
     <main>
-        <!-- Hero Section (نفس السابق) -->
+        <!-- Hero Section -->
         <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-surface-container-lowest">
             <div class="absolute inset-0 opacity-20 pointer-events-none">
                 <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
@@ -336,7 +336,8 @@
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
                     <a href="https://t.me/SMXAgentSupportbot" target="_blank" rel="noopener noreferrer" class="gold-gradient-bg text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg shadow-xl shadow-primary/20 hover:scale-105 transition-all duration-300">ابدأ مشروعك</a>
-                    <a href="https://t.me/SMXAgent" target="_blank" rel="noopener noreferrer" class="border border-primary/30 text-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-primary/5 transition-all duration-300">استعرض أعمالنا</a>
+                    <!-- تم تعديل هذا الرابط ليقود إلى قسم الكاروسيل (فريق العمل) مع تمرير سلس -->
+                    <a href="#team" class="border border-primary/30 text-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-primary/5 transition-all duration-300 scroll-link">استعرض أعمالنا</a>
                 </div>
             </div>
         </section>
@@ -427,7 +428,6 @@
                         <div class="carousel-track">
                             <!-- البطاقات سيتم إضافتها عبر JavaScript -->
                         </div>
-                        <!-- أسهم التنقل (للجوال تظهر بشكل مختلف، لكننا سنضيفها هنا أيضًا للتوافق) -->
                         <button class="nav-arrow up hidden md:flex" id="carousel-up"><i class="fas fa-chevron-up"></i></button>
                         <button class="nav-arrow down hidden md:flex" id="carousel-down"><i class="fas fa-chevron-down"></i></button>
                     </div>
@@ -437,7 +437,6 @@
                     </div>
                 </div>
                 <div class="dots" id="dots-container"></div>
-                <!-- أسهم تنقل للجوال (ستظهر عند الحاجة عبر CSS) -->
                 <div class="flex md:hidden justify-center gap-8 mt-6">
                     <button class="nav-arrow up" id="mobile-up"><i class="fas fa-chevron-up"></i></button>
                     <button class="nav-arrow down" id="mobile-down"><i class="fas fa-chevron-down"></i></button>
@@ -534,7 +533,6 @@
                 dot.classList.toggle("active", i === currentIndex);
             });
 
-            // تحديث النص مع تأثير بسيط
             memberNameElem.style.opacity = "0";
             memberRoleElem.style.opacity = "0";
             setTimeout(() => {
@@ -562,14 +560,29 @@
             card.addEventListener('click', () => updateCarousel(i));
         });
 
-        // أحداث لوحة المفاتيح
         document.addEventListener("keydown", (e) => {
             if (e.key === "ArrowUp") updateCarousel(currentIndex - 1);
             else if (e.key === "ArrowDown") updateCarousel(currentIndex + 1);
         });
 
-        // بدء التشغيل
         updateCarousel(0);
+
+        // تمرير سلس لجميع الروابط التي تحمل class="scroll-link"
+        document.querySelectorAll('.scroll-link').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
     </script>
 </body>
-            </html>
+</html>
