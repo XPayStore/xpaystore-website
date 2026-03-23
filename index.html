@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XPayStore | Premium Digital Solutions</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#2a2a2a",
+                        "on-primary-container": "#554300",
+                        "surface-container": "#20201f",
+                        "on-secondary-fixed": "#241a00",
+                        "inverse-surface": "#e5e2e1",
+                        "secondary-container": "#685200",
+                        "tertiary-fixed-dim": "#e4c36d",
+                        "on-background": "#e5e2e1",
+                        "on-tertiary-container": "#564200",
+                        "on-secondary": "#3c2f00",
+                        "on-surface-variant": "#d0c5af",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#e9c349",
+                        "tertiary-fixed": "#ffdf91",
+                        "surface-bright": "#393939",
+                        "on-tertiary": "#3d2e00",
+                        "surface-variant": "#353535",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353535",
+                        "primary-fixed": "#ffe088",
+                        "surface": "#131313",
+                        "secondary": "#e2c46c",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#e2c46c",
+                        "primary-container": "#d4af37",
+                        "on-surface": "#e5e2e1",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#e5c76f",
+                        "outline-variant": "#4d4635",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed": "#241a00",
+                        "on-primary": "#3c2f00",
+                        "tertiary-container": "#cfaf5b",
+                        "primary": "#f2ca50",
+                        "background": "#131313",
+                        "surface-dim": "#131313",
+                        "on-primary-fixed-variant": "#574500",
+                        "inverse-primary": "#735c00",
+                        "on-error": "#690005",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#99907c",
+                        "tertiary": "#ecca73",
+                        "secondary-fixed": "#ffe088",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-fixed-variant": "#574500",
+                        "error": "#ffb4ab"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            background: rgba(19, 19, 19, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #F2CA50 0%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #F2CA50 0%, #D4AF37 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+    <header class="fixed top-0 w-full z-50 bg-gradient-to-b from-[#131313] to-transparent shadow-2xl shadow-black/50">
+        <nav class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
+            <div class="text-2xl font-bold tracking-tighter text-[#F2CA50] font-headline uppercase">XPayStore</div>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#0" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#F2CA50] border-b-2 border-[#D4AF37] pb-1">Services</a>
+                <a href="#0" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">Pricing</a>
+                <a href="#0" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">About</a>
+                <a href="#0" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors hover:scale-105 transition-transform duration-300">Login</button>
+                <button class="gold-gradient-bg text-on-primary px-6 py-2 font-label font-bold uppercase tracking-wider text-xs rounded-lg hover:scale-105 transition-transform duration-300 active:opacity-80 active:scale-95">Get Started</button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-surface-container-lowest">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary-container rounded-full blur-[100px]"></div>
+            </div>
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+                <h1 class="font-headline text-6xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter gold-gradient-text mb-6">XPayStore</h1>
+                <p class="font-body text-xl md:text-2xl text-on-surface-variant font-light mb-12 tracking-wide leading-relaxed">
+                    Elevating your digital presence through <span class="text-on-surface font-medium">precision engineering</span> and absolute aesthetic authority.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <button class="gold-gradient-bg text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg shadow-xl shadow-primary/20 hover:scale-105 transition-all duration-300">Initiate Project</button>
+                    <button class="border border-primary/30 text-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-primary/5 transition-all duration-300">View Portfolio</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Cards (Bento Style) -->
+        <section class="py-32 px-8 bg-surface">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-20">
+                    <span class="font-label text-primary tracking-[0.3em] uppercase text-xs mb-4 block">Our Capabilities</span>
+                    <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface">Digital Craftsmanship</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="group bg-surface-container-low border border-outline-variant/15 p-10 rounded-lg hover:bg-surface-container-high transition-all duration-500 hover:scale-[1.02]">
+                        <div class="mb-8">
+                            <span class="material-symbols-outlined text-4xl text-primary">rocket_launch</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-primary mb-4 uppercase tracking-tight">Growth Strategy</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Precision-engineered roadmaps designed to scale your brand with ruthless efficiency and data-driven insights.</p>
+                    </div>
+                    <div class="group bg-surface-container-low border border-outline-variant/15 p-10 rounded-lg hover:bg-surface-container-high transition-all duration-500 hover:scale-[1.02]">
+                        <div class="mb-8">
+                            <span class="material-symbols-outlined text-4xl text-primary">architecture</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-primary mb-4 uppercase tracking-tight">Brand Identity</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Crafting high-end visual systems that command attention and communicate absolute market authority.</p>
+                    </div>
+                    <div class="group bg-surface-container-low border border-outline-variant/15 p-10 rounded-lg hover:bg-surface-container-high transition-all duration-500 hover:scale-[1.02]">
+                        <div class="mb-8">
+                            <span class="material-symbols-outlined text-4xl text-primary">terminal</span>
+                        </div>
+                        <h3 class="font-headline text-2xl font-bold text-primary mb-4 uppercase tracking-tight">Tech Stack</h3>
+                        <p class="text-on-surface-variant leading-relaxed">Utilizing cutting-edge technologies to build seamless, high-performance digital ecosystems for global users.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="py-32 px-8 bg-surface-container-lowest relative overflow-hidden">
+            <div class="max-w-7xl mx-auto relative z-10">
+                <div class="text-center mb-24">
+                    <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-6">Investment Tiers</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto">Transparent, premium pricing models for those who value quality above all else.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div class="bg-surface p-12 rounded-xl border border-outline-variant/15 relative">
+                        <div class="mb-10">
+                            <span class="font-label text-on-surface-variant tracking-widest uppercase text-xs block mb-4">Elite Tier</span>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-headline font-bold text-primary">$125</span>
+                                <span class="text-on-surface-variant">/ project</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-6 mb-12">
+                            <li class="flex items-center gap-4 text-on-surface">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Advanced UI/UX Architecture</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-on-surface">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Core Brand Consultation</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-on-surface">
+                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
+                                <span>Standard Technical Support</span>
+                            </li>
+                        </ul>
+                        <button class="w-full border border-primary/40 text-primary py-4 font-headline font-bold uppercase tracking-widest text-xs rounded hover:bg-primary/10 transition-colors">Select Tier</button>
+                    </div>
+                    <div class="bg-surface-container-high p-12 rounded-xl border-2 border-primary relative overflow-hidden">
+                        <div class="absolute top-0 right-0 gold-gradient-bg text-on-primary px-4 py-1 font-label text-[10px] font-bold tracking-widest uppercase">Premium</div>
+                        <div class="mb-10">
+                            <span class="font-label text-primary tracking-widest uppercase text-xs block mb-4">Obsidian Tier</span>
+                            <div class="flex items-baseline gap-2">
+                                <span class="text-5xl font-headline font-bold text-primary">$175</span>
+                                <span class="text-on-surface-variant">/ project</span>
+                            </div>
+                        </div>
+                        <ul class="space-y-6 mb-12">
+                            <li class="flex items-center gap-4 text-on-surface">
+                                <span class="material-symbols-outlined text-primary text-xl">verified</span>
+                                <span>Custom Interactive Design</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-on-surface">
+                                <span class="material-symbols-outlined text-primary text-xl">verified</span>
+                                <span>Priority 24/7 Concierge</span>
+                            </li>
+                            <li class="flex items-center gap-4 text-on-surface">
+                                <span class="material-symbols-outlined text-primary text-xl">verified</span>
+                                <span>Full Performance Analytics</span>
+                            </li>
+                        </ul>
+                        <button class="w-full gold-gradient-bg text-on-primary py-4 font-headline font-bold uppercase tracking-widest text-xs rounded hover:scale-[1.02] transition-transform">Select Tier</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-32 px-8 bg-surface">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="font-headline text-4xl md:text-6xl font-bold text-on-surface mb-8 leading-tight">Start your journey with us now!</h2>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="#0" class="flex items-center justify-center gap-3 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest text-sm hover:bg-[#25D366]/20 transition-all" target="_blank" rel="noopener noreferrer">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6JIjtgSXgD3WwSh8QYIzKMfJ91lfCgIrW3elyu2t33MunQSpSgxLwJSGPbQdtTDDiQixl8SEsDHX6iZe6lblKkcwUEZOhKPPy--hpgtSJr8eEmlUtrOEKSNRWB1fkS9naZEsp5w_9LAqK7c8RmTRDDjrGp2_g9SOiYVed7eqHYeTEkHaJ0ujVcgKPMpiuit4gC_DuefuSmPRlkZ21MrzMzOBx1pwLicDmbM4izmaxM8ZIWbmh1fJQdhrd6XgjDJxg6PEHQGhaMmE" alt="WhatsApp icon" class="w-6 h-6">
+                        WhatsApp
+                    </a>
+                    <a href="#0" class="flex items-center justify-center gap-3 bg-[#0088cc]/10 border border-[#0088cc]/30 text-[#0088cc] px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest text-sm hover:bg-[#0088cc]/20 transition-all" target="_blank" rel="noopener noreferrer">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJnqUzKov0EUjoDXvE_ESAaPTh8vcP3bRKx5u4iQzT1aIL7vnZD3RPpyqPabCzEXBptrYM067OHs2g3ZM1DI7TM2fiGoFRB3cO8AMF2wimflJ-sTGW96hC2waI2U0bKVH5sKPtUIwnuxeU-aRPUdk7RuaJgtT9wQn1IVh24JUjoHEbH2EmHBN31oSX5nvqrpax0kO75ucfLC_4mDwt0A7jojMQHjEOPaR8cwecSUXna_f_HOPBzkQ3b4v2DCKl0XPR_gHapFQhZZ0" alt="Telegram icon" class="w-6 h-6">
+                        Telegram
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#0E0E0E] w-full py-12 border-t border-[#4D4635]/15">
+        <div class="flex flex-col md:flex-row justify-between items-center w-full px-8 max-w-7xl mx-auto gap-6">
+            <div class="text-lg font-bold text-[#F2CA50] font-headline">XPayStore</div>
+            <div class="flex gap-8">
+                <a href="#0" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">WhatsApp</a>
+                <a href="#0" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">Telegram</a>
+                <a href="#0" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">Privacy Policy</a>
+                <a href="#0" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">Terms of Service</a>
+            </div>
+            <p class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60">© 2026 XPayStore. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
