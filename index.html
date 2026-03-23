@@ -4,8 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>XPayStore | حلول رقمية احترافية</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (عربية وإنجليزية) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (أيقونات احترافية) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Material Symbols (للأيقونات الإضافية) -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
@@ -62,9 +67,10 @@
                         "error": "#ffb4ab"
                     },
                     fontFamily: {
-                        "headline": ["Space Grotesk"],
-                        "body": ["Plus Jakarta Sans"],
-                        "label": ["Space Grotesk"]
+                        "headline": ["Space Grotesk", "Cairo", "sans-serif"],
+                        "body": ["Plus Jakarta Sans", "Cairo", "sans-serif"],
+                        "label": ["Space Grotesk", "Cairo", "sans-serif"],
+                        "arabic": ["Cairo", "sans-serif"]
                     },
                     borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
                 },
@@ -87,21 +93,28 @@
         .gold-gradient-bg {
             background: linear-gradient(135deg, #F2CA50 0%, #D4AF37 100%);
         }
+        /* تحسين الخط العربي */
+        body {
+            font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+        }
+        h1, h2, h3, h4, .font-headline {
+            font-family: 'Space Grotesk', 'Cairo', sans-serif;
+        }
     </style>
 </head>
-<body class="bg-background text-on-background font-body selection:bg-primary-container selection:text-on-primary-container">
+<body class="bg-background text-on-background font-arabic selection:bg-primary-container selection:text-on-primary-container">
     <header class="fixed top-0 w-full z-50 bg-gradient-to-b from-[#131313] to-transparent shadow-2xl shadow-black/50">
         <nav class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
             <div class="text-2xl font-bold tracking-tighter text-[#F2CA50] font-headline uppercase">XPayStore</div>
             <div class="hidden md:flex items-center gap-8">
-                <a href="#0" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#F2CA50] border-b-2 border-[#D4AF37] pb-1">الخدمات</a>
-                <a href="#0" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">الباقات</a>
-                <a href="#0" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">من نحن</a>
-                <a href="#0" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">اتصل بنا</a>
+                <a href="#services" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#F2CA50] border-b-2 border-[#D4AF37] pb-1">الخدمات</a>
+                <a href="#pricing" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">الباقات</a>
+                <a href="#about" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">من نحن</a>
+                <a href="#contact" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">اتصل بنا</a>
             </div>
             <div class="flex items-center gap-4">
                 <button class="hidden md:block font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors hover:scale-105 transition-transform duration-300">تسجيل الدخول</button>
-                <button class="gold-gradient-bg text-on-primary px-6 py-2 font-label font-bold uppercase tracking-wider text-xs rounded-lg hover:scale-105 transition-transform duration-300 active:opacity-80 active:scale-95">ابدأ الآن</button>
+                <a href="https://t.me/SMXAgentSupportbot" target="_blank" rel="noopener noreferrer" class="gold-gradient-bg text-on-primary px-6 py-2 font-label font-bold uppercase tracking-wider text-xs rounded-lg hover:scale-105 transition-transform duration-300 active:opacity-80 active:scale-95">ابدأ الآن</a>
             </div>
         </nav>
     </header>
@@ -118,14 +131,14 @@
                     نرتقي بحضورك الرقمي من خلال <span class="text-on-surface font-medium">هندسة دقيقة</span> وسلطة جمالية مطلقة.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                    <button class="gold-gradient-bg text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg shadow-xl shadow-primary/20 hover:scale-105 transition-all duration-300">ابدأ مشروعك</button>
-                    <button class="border border-primary/30 text-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-primary/5 transition-all duration-300">استعرض أعمالنا</button>
+                    <a href="https://t.me/SMXAgentSupportbot" target="_blank" rel="noopener noreferrer" class="gold-gradient-bg text-on-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg shadow-xl shadow-primary/20 hover:scale-105 transition-all duration-300">ابدأ مشروعك</a>
+                    <a href="https://t.me/SMXAgent" target="_blank" rel="noopener noreferrer" class="border border-primary/30 text-primary px-10 py-4 font-headline font-bold uppercase tracking-widest text-sm rounded-lg hover:bg-primary/5 transition-all duration-300">استعرض أعمالنا</a>
                 </div>
             </div>
         </section>
 
         <!-- Service Cards (Bento Style) -->
-        <section class="py-32 px-8 bg-surface">
+        <section id="services" class="py-32 px-8 bg-surface">
             <div class="max-w-7xl mx-auto">
                 <div class="mb-20 text-right">
                     <span class="font-label text-primary tracking-[0.3em] uppercase text-xs mb-4 block">إمكانياتنا</span>
@@ -158,7 +171,7 @@
         </section>
 
         <!-- Pricing Section -->
-        <section class="py-32 px-8 bg-surface-container-lowest relative overflow-hidden">
+        <section id="pricing" class="py-32 px-8 bg-surface-container-lowest relative overflow-hidden">
             <div class="max-w-7xl mx-auto relative z-10">
                 <div class="text-center mb-24">
                     <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface mb-6">فئات الاستثمار</h2>
@@ -219,16 +232,16 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="py-32 px-8 bg-surface">
+        <section id="contact" class="py-32 px-8 bg-surface">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="font-headline text-4xl md:text-6xl font-bold text-on-surface mb-8 leading-tight">ابدأ رحلتك معنا الآن!</h2>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="#0" class="flex items-center justify-center gap-3 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest text-sm hover:bg-[#25D366]/20 transition-all" target="_blank" rel="noopener noreferrer">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6JIjtgSXgD3WwSh8QYIzKMfJ91lfCgIrW3elyu2t33MunQSpSgxLwJSGPbQdtTDDiQixl8SEsDHX6iZe6lblKkcwUEZOhKPPy--hpgtSJr8eEmlUtrOEKSNRWB1fkS9naZEsp5w_9LAqK7c8RmTRDDjrGp2_g9SOiYVed7eqHYeTEkHaJ0ujVcgKPMpiuit4gC_DuefuSmPRlkZ21MrzMzOBx1pwLicDmbM4izmaxM8ZIWbmh1fJQdhrd6XgjDJxg6PEHQGhaMmE" alt="WhatsApp icon" class="w-6 h-6">
+                    <a href="https://wa.me/212620633924" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest text-sm hover:bg-[#25D366]/20 transition-all">
+                        <i class="fab fa-whatsapp text-2xl"></i>
                         واتساب
                     </a>
-                    <a href="#0" class="flex items-center justify-center gap-3 bg-[#0088cc]/10 border border-[#0088cc]/30 text-[#0088cc] px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest text-sm hover:bg-[#0088cc]/20 transition-all" target="_blank" rel="noopener noreferrer">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJnqUzKov0EUjoDXvE_ESAaPTh8vcP3bRKx5u4iQzT1aIL7vnZD3RPpyqPabCzEXBptrYM067OHs2g3ZM1DI7TM2fiGoFRB3cO8AMF2wimflJ-sTGW96hC2waI2U0bKVH5sKPtUIwnuxeU-aRPUdk7RuaJgtT9wQn1IVh24JUjoHEbH2EmHBN31oSX5nvqrpax0kO75ucfLC_4mDwt0A7jojMQHjEOPaR8cwecSUXna_f_HOPBzkQ3b4v2DCKl0XPR_gHapFQhZZ0" alt="Telegram icon" class="w-6 h-6">
+                    <a href="https://t.me/SMXAgentSupportbot" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-[#0088cc]/10 border border-[#0088cc]/30 text-[#0088cc] px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest text-sm hover:bg-[#0088cc]/20 transition-all">
+                        <i class="fab fa-telegram text-2xl"></i>
                         تيليجرام
                     </a>
                 </div>
@@ -240,10 +253,10 @@
         <div class="flex flex-col md:flex-row justify-between items-center w-full px-8 max-w-7xl mx-auto gap-6">
             <div class="text-lg font-bold text-[#F2CA50] font-headline">XPayStore</div>
             <div class="flex gap-8">
-                <a href="#0" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">واتساب</a>
-                <a href="#0" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">تيليجرام</a>
-                <a href="#0" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">سياسة الخصوصية</a>
-                <a href="#0" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">شروط الخدمة</a>
+                <a href="https://wa.me/212620633924" target="_blank" rel="noopener noreferrer" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">واتساب</a>
+                <a href="https://t.me/SMXAgentSupportbot" target="_blank" rel="noopener noreferrer" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">تيليجرام</a>
+                <a href="privacy.html" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">سياسة الخصوصية</a>
+                <a href="terms.html" class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60 hover:text-[#F2CA50] hover:translate-y-[-2px] transition-transform">شروط الخدمة</a>
             </div>
             <p class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60">© 2026 XPayStore. جميع الحقوق محفوظة.</p>
         </div>
