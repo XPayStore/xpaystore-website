@@ -6,8 +6,8 @@
     <title>XPayStore | حلول رقمية احترافية</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <!-- Google Fonts (عربية وإنجليزية) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Tajawal للعربية + خطوط إنجليزية) -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 (أيقونات احترافية) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Material Symbols (للأيقونات الإضافية) -->
@@ -67,10 +67,10 @@
                         "error": "#ffb4ab"
                     },
                     fontFamily: {
-                        "headline": ["Space Grotesk", "Cairo", "sans-serif"],
-                        "body": ["Plus Jakarta Sans", "Cairo", "sans-serif"],
-                        "label": ["Space Grotesk", "Cairo", "sans-serif"],
-                        "arabic": ["Cairo", "sans-serif"]
+                        "headline": ["Tajawal", "Space Grotesk", "sans-serif"],
+                        "body": ["Tajawal", "Plus Jakarta Sans", "sans-serif"],
+                        "label": ["Tajawal", "Space Grotesk", "sans-serif"],
+                        "arabic": ["Tajawal", "sans-serif"]
                     },
                     borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
                 },
@@ -78,6 +78,7 @@
         }
     </script>
     <style>
+        /* ===== ستايلات عامة ===== */
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -93,23 +94,225 @@
         .gold-gradient-bg {
             background: linear-gradient(135deg, #F2CA50 0%, #D4AF37 100%);
         }
-        /* تحسين الخط العربي */
         body {
-            font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Tajawal', 'Plus Jakarta Sans', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
         }
         h1, h2, h3, h4, .font-headline {
-            font-family: 'Space Grotesk', 'Cairo', sans-serif;
+            font-family: 'Tajawal', 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .font-label, button, .btn {
+            font-family: 'Tajawal', 'Space Grotesk', sans-serif;
+        }
+
+        /* ===== ستايلات الكاروسيل ===== */
+        .carousel-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .carousel-container {
+            width: 100%;
+            max-width: 500px;
+            height: 70vh;
+            position: relative;
+            perspective: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .carousel-track {
+            width: 450px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .card {
+            position: absolute;
+            width: 400px;
+            height: 225px;
+            background: #1f1f1f;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            cursor: pointer;
+            border: 1px solid rgba(242, 202, 80, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .card.center {
+            z-index: 10;
+            transform: scale(1.1) translateZ(0);
+            border: 2px solid #F2CA50;
+        }
+        .card.center img {
+            filter: none;
+        }
+        .card.up-2 {
+            z-index: 1;
+            transform: translateY(-300px) scale(0.8) translateZ(-300px);
+            opacity: 0.7;
+        }
+        .card.up-2 img {
+            filter: grayscale(100%);
+        }
+        .card.up-1 {
+            z-index: 5;
+            transform: translateY(-150px) scale(0.9) translateZ(-100px);
+            opacity: 0.9;
+        }
+        .card.up-1 img {
+            filter: grayscale(100%);
+        }
+        .card.down-1 {
+            z-index: 5;
+            transform: translateY(150px) scale(0.9) translateZ(-100px);
+            opacity: 0.9;
+        }
+        .card.down-1 img {
+            filter: grayscale(100%);
+        }
+        .card.down-2 {
+            z-index: 1;
+            transform: translateY(300px) scale(0.8) translateZ(-300px);
+            opacity: 0.7;
+        }
+        .card.down-2 img {
+            filter: grayscale(100%);
+        }
+        .card.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .member-info {
+            text-align: center;
+            margin-top: 30px;
+            transition: all 0.5s ease-out;
+        }
+        .member-name {
+            color: #F2CA50;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            position: relative;
+            display: inline-block;
+        }
+        .member-name::before,
+        .member-name::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            width: 60px;
+            height: 2px;
+            background: #F2CA50;
+        }
+        .member-name::before {
+            left: -80px;
+        }
+        .member-name::after {
+            right: -80px;
+        }
+        .member-role {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            font-weight: 500;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 12px;
+        }
+        .nav-arrow {
+            background: transparent;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 2rem;
+            border: none;
+            color: #F2CA50;
+        }
+        .nav-arrow:hover {
+            transform: scale(1.1);
+            color: #fff;
+        }
+        .nav-controls {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            justify-content: center;
+        }
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(242, 202, 80, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .dot.active {
+            background: #F2CA50;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .carousel-container {
+                height: 55vh;
+                max-width: 350px;
+            }
+            .carousel-track {
+                width: 350px;
+            }
+            .card {
+                width: 320px;
+                height: 180px;
+            }
+            .card.up-2 { transform: translateY(-160px) scale(0.8) translateZ(-300px); }
+            .card.up-1 { transform: translateY(-80px) scale(0.9) translateZ(-100px); }
+            .card.down-1 { transform: translateY(80px) scale(0.9) translateZ(-100px); }
+            .card.down-2 { transform: translateY(160px) scale(0.8) translateZ(-300px); }
+            .member-name { font-size: 1.6rem; }
+            .member-name::before, .member-name::after { width: 40px; }
+            .member-name::before { left: -60px; }
+            .member-name::after { right: -60px; }
+            .member-role { font-size: 1rem; }
+            .nav-arrow { width: 50px; height: 50px; font-size: 1.6rem; }
         }
     </style>
 </head>
 <body class="bg-background text-on-background font-arabic selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Header (ثابت) -->
     <header class="fixed top-0 w-full z-50 bg-gradient-to-b from-[#131313] to-transparent shadow-2xl shadow-black/50">
         <nav class="flex justify-between items-center w-full px-8 py-6 max-w-7xl mx-auto">
             <div class="text-2xl font-bold tracking-tighter text-[#F2CA50] font-headline uppercase">XPayStore</div>
             <div class="hidden md:flex items-center gap-8">
                 <a href="#services" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#F2CA50] border-b-2 border-[#D4AF37] pb-1">الخدمات</a>
                 <a href="#pricing" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">الباقات</a>
-                <a href="#about" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">من نحن</a>
+                <a href="#team" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">فريق العمل</a>
                 <a href="#contact" class="font-['Space_Grotesk'] uppercase tracking-[0.05em] text-sm text-[#E5E2E1] hover:text-[#F2CA50] transition-colors">اتصل بنا</a>
             </div>
             <div class="flex items-center gap-4">
@@ -118,8 +321,9 @@
             </div>
         </nav>
     </header>
+
     <main>
-        <!-- Hero Section -->
+        <!-- Hero Section (نفس السابق) -->
         <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-surface-container-lowest">
             <div class="absolute inset-0 opacity-20 pointer-events-none">
                 <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-[120px]"></div>
@@ -137,7 +341,7 @@
             </div>
         </section>
 
-        <!-- Service Cards (Bento Style) -->
+        <!-- Service Cards -->
         <section id="services" class="py-32 px-8 bg-surface">
             <div class="max-w-7xl mx-auto">
                 <div class="mb-20 text-right">
@@ -146,23 +350,17 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="group bg-surface-container-low border border-outline-variant/15 p-10 rounded-lg hover:bg-surface-container-high transition-all duration-500 hover:scale-[1.02] text-right">
-                        <div class="mb-8">
-                            <span class="material-symbols-outlined text-4xl text-primary">rocket_launch</span>
-                        </div>
+                        <div class="mb-8"><span class="material-symbols-outlined text-4xl text-primary">rocket_launch</span></div>
                         <h3 class="font-headline text-2xl font-bold text-primary mb-4 uppercase tracking-tight">استراتيجية النمو</h3>
                         <p class="text-on-surface-variant leading-relaxed">خرائط طريق مصممة بدقة لتوسيع علامتك التجارية بكفاءة عالية ورؤى تعتمد على البيانات.</p>
                     </div>
                     <div class="group bg-surface-container-low border border-outline-variant/15 p-10 rounded-lg hover:bg-surface-container-high transition-all duration-500 hover:scale-[1.02] text-right">
-                        <div class="mb-8">
-                            <span class="material-symbols-outlined text-4xl text-primary">architecture</span>
-                        </div>
+                        <div class="mb-8"><span class="material-symbols-outlined text-4xl text-primary">architecture</span></div>
                         <h3 class="font-headline text-2xl font-bold text-primary mb-4 uppercase tracking-tight">هوية العلامة</h3>
                         <p class="text-on-surface-variant leading-relaxed">صياغة أنظمة بصرية راقية تفرض الانتباه وتعبر عن سلطة مطلقة في السوق.</p>
                     </div>
                     <div class="group bg-surface-container-low border border-outline-variant/15 p-10 rounded-lg hover:bg-surface-container-high transition-all duration-500 hover:scale-[1.02] text-right">
-                        <div class="mb-8">
-                            <span class="material-symbols-outlined text-4xl text-primary">terminal</span>
-                        </div>
+                        <div class="mb-8"><span class="material-symbols-outlined text-4xl text-primary">terminal</span></div>
                         <h3 class="font-headline text-2xl font-bold text-primary mb-4 uppercase tracking-tight">التقنيات الحديثة</h3>
                         <p class="text-on-surface-variant leading-relaxed">استخدام أحدث التقنيات لبناء أنظمة رقمية متكاملة عالية الأداء للمستخدمين حول العالم.</p>
                     </div>
@@ -178,6 +376,7 @@
                     <p class="text-on-surface-variant max-w-2xl mx-auto">نماذج تسعير شفافة ومتميزة لمن يقدّر الجودة قبل كل شيء.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <!-- الباقة العادية -->
                     <div class="bg-surface p-12 rounded-xl border border-outline-variant/15 relative text-right">
                         <div class="mb-10">
                             <span class="font-label text-on-surface-variant tracking-widest uppercase text-xs block mb-4">الفئة الممتازة</span>
@@ -187,21 +386,13 @@
                             </div>
                         </div>
                         <ul class="space-y-6 mb-12">
-                            <li class="flex items-center gap-4 text-on-surface">
-                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
-                                <span>هيكلة متقدمة لواجهات المستخدم</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-on-surface">
-                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
-                                <span>استشارة أساسية للعلامة التجارية</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-on-surface">
-                                <span class="material-symbols-outlined text-primary text-xl">check_circle</span>
-                                <span>دعم فني قياسي</span>
-                            </li>
+                            <li class="flex items-center gap-4 text-on-surface"><span class="material-symbols-outlined text-primary text-xl">check_circle</span><span>هيكلة متقدمة لواجهات المستخدم</span></li>
+                            <li class="flex items-center gap-4 text-on-surface"><span class="material-symbols-outlined text-primary text-xl">check_circle</span><span>استشارة أساسية للعلامة التجارية</span></li>
+                            <li class="flex items-center gap-4 text-on-surface"><span class="material-symbols-outlined text-primary text-xl">check_circle</span><span>دعم فني قياسي</span></li>
                         </ul>
                         <button class="w-full border border-primary/40 text-primary py-4 font-headline font-bold uppercase tracking-widest text-xs rounded hover:bg-primary/10 transition-colors">اختر هذه الفئة</button>
                     </div>
+                    <!-- الباقة المميزة -->
                     <div class="bg-surface-container-high p-12 rounded-xl border-2 border-primary relative overflow-hidden text-right">
                         <div class="absolute top-0 right-0 gold-gradient-bg text-on-primary px-4 py-1 font-label text-[10px] font-bold tracking-widest uppercase">الأفضلية</div>
                         <div class="mb-10">
@@ -212,21 +403,44 @@
                             </div>
                         </div>
                         <ul class="space-y-6 mb-12">
-                            <li class="flex items-center gap-4 text-on-surface">
-                                <span class="material-symbols-outlined text-primary text-xl">verified</span>
-                                <span>تصميم تفاعلي مخصص</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-on-surface">
-                                <span class="material-symbols-outlined text-primary text-xl">verified</span>
-                                <span>خدمة VIP على مدار الساعة</span>
-                            </li>
-                            <li class="flex items-center gap-4 text-on-surface">
-                                <span class="material-symbols-outlined text-primary text-xl">verified</span>
-                                <span>تحليلات أداء شاملة</span>
-                            </li>
+                            <li class="flex items-center gap-4 text-on-surface"><span class="material-symbols-outlined text-primary text-xl">verified</span><span>تصميم تفاعلي مخصص</span></li>
+                            <li class="flex items-center gap-4 text-on-surface"><span class="material-symbols-outlined text-primary text-xl">verified</span><span>خدمة VIP على مدار الساعة</span></li>
+                            <li class="flex items-center gap-4 text-on-surface"><span class="material-symbols-outlined text-primary text-xl">verified</span><span>تحليلات أداء شاملة</span></li>
                         </ul>
                         <button class="w-full gold-gradient-bg text-on-primary py-4 font-headline font-bold uppercase tracking-widest text-xs rounded hover:scale-[1.02] transition-transform">اختر هذه الفئة</button>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== قسم الكاروسيل (فريق العمل) ===== -->
+        <section id="team" class="py-32 px-8 bg-surface">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20">
+                    <span class="font-label text-primary tracking-[0.3em] uppercase text-xs mb-4 block">فريق الخبراء</span>
+                    <h2 class="font-headline text-4xl md:text-5xl font-bold text-on-surface">من يقف وراء النجاح</h2>
+                    <p class="text-on-surface-variant max-w-2xl mx-auto mt-4">نخبة من المبدعين والمطورين لخدمتك على مدار الساعة</p>
+                </div>
+
+                <div class="carousel-section">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <!-- البطاقات سيتم إضافتها عبر JavaScript -->
+                        </div>
+                        <!-- أسهم التنقل (للجوال تظهر بشكل مختلف، لكننا سنضيفها هنا أيضًا للتوافق) -->
+                        <button class="nav-arrow up hidden md:flex" id="carousel-up"><i class="fas fa-chevron-up"></i></button>
+                        <button class="nav-arrow down hidden md:flex" id="carousel-down"><i class="fas fa-chevron-down"></i></button>
+                    </div>
+                    <div class="member-info">
+                        <div class="member-name" id="member-name">أحمد المنصور</div>
+                        <div class="member-role" id="member-role">المؤسس والمدير التنفيذي</div>
+                    </div>
+                </div>
+                <div class="dots" id="dots-container"></div>
+                <!-- أسهم تنقل للجوال (ستظهر عند الحاجة عبر CSS) -->
+                <div class="flex md:hidden justify-center gap-8 mt-6">
+                    <button class="nav-arrow up" id="mobile-up"><i class="fas fa-chevron-up"></i></button>
+                    <button class="nav-arrow down" id="mobile-down"><i class="fas fa-chevron-down"></i></button>
                 </div>
             </div>
         </section>
@@ -237,12 +451,10 @@
                 <h2 class="font-headline text-4xl md:text-6xl font-bold text-on-surface mb-8 leading-tight">ابدأ رحلتك معنا الآن!</h2>
                 <div class="flex flex-col sm:flex-row gap-6 justify-center">
                     <a href="https://wa.me/212620633924" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366] px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest text-sm hover:bg-[#25D366]/20 transition-all">
-                        <i class="fab fa-whatsapp text-2xl"></i>
-                        واتساب
+                        <i class="fab fa-whatsapp text-2xl"></i> واتساب
                     </a>
                     <a href="https://t.me/SMXAgentSupportbot" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-[#0088cc]/10 border border-[#0088cc]/30 text-[#0088cc] px-8 py-4 rounded-lg font-headline font-bold uppercase tracking-widest text-sm hover:bg-[#0088cc]/20 transition-all">
-                        <i class="fab fa-telegram text-2xl"></i>
-                        تيليجرام
+                        <i class="fab fa-telegram text-2xl"></i> تيليجرام
                     </a>
                 </div>
             </div>
@@ -261,5 +473,103 @@
             <p class="font-['Plus_Jakarta_Sans'] text-sm text-[#E5E2E1]/60">© 2026 XPayStore. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
+
+    <script>
+        // بيانات أعضاء الفريق (عربية)
+        const teamMembers = [
+            { name: "أحمد المنصور", role: "المؤسس والمدير التنفيذي", img: "https://picsum.photos/id/1015/400/225" },
+            { name: "ليلى السعيد", role: "مديرة الإبداع", img: "https://picsum.photos/id/26/400/225" },
+            { name: "عمر الخالدي", role: "كبير المطورين", img: "https://picsum.photos/id/29/400/225" },
+            { name: "نورا الفهد", role: "مصممة تجربة المستخدم", img: "https://picsum.photos/id/30/400/225" },
+            { name: "سعود الرشيد", role: "مدير التسويق", img: "https://picsum.photos/id/31/400/225" },
+            { name: "مريم العتيبي", role: "مديرة المنتج", img: "https://picsum.photos/id/32/400/225" }
+        ];
+
+        // إنشاء البطاقات ديناميكيًا
+        const track = document.querySelector('.carousel-track');
+        const dotsContainer = document.getElementById('dots-container');
+        const memberNameElem = document.getElementById('member-name');
+        const memberRoleElem = document.getElementById('member-role');
+
+        teamMembers.forEach((member, index) => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.setAttribute('data-index', index);
+            card.innerHTML = `<img src="${member.img}" alt="${member.name}">`;
+            track.appendChild(card);
+        });
+
+        // إنشاء النقاط
+        teamMembers.forEach((_, i) => {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            dot.setAttribute('data-index', i);
+            dotsContainer.appendChild(dot);
+        });
+
+        const cards = document.querySelectorAll(".card");
+        const dots = document.querySelectorAll(".dot");
+        let currentIndex = 0;
+        let isAnimating = false;
+
+        function updateCarousel(newIndex) {
+            if (isAnimating) return;
+            isAnimating = true;
+
+            currentIndex = (newIndex + teamMembers.length) % teamMembers.length;
+
+            cards.forEach((card, i) => {
+                const offset = (i - currentIndex + teamMembers.length) % teamMembers.length;
+                card.classList.remove("center", "up-1", "up-2", "down-1", "down-2", "hidden");
+
+                if (offset === 0) card.classList.add("center");
+                else if (offset === 1) card.classList.add("down-1");
+                else if (offset === 2) card.classList.add("down-2");
+                else if (offset === teamMembers.length - 1) card.classList.add("up-1");
+                else if (offset === teamMembers.length - 2) card.classList.add("up-2");
+                else card.classList.add("hidden");
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentIndex);
+            });
+
+            // تحديث النص مع تأثير بسيط
+            memberNameElem.style.opacity = "0";
+            memberRoleElem.style.opacity = "0";
+            setTimeout(() => {
+                memberNameElem.textContent = teamMembers[currentIndex].name;
+                memberRoleElem.textContent = teamMembers[currentIndex].role;
+                memberNameElem.style.opacity = "1";
+                memberRoleElem.style.opacity = "1";
+            }, 200);
+
+            setTimeout(() => { isAnimating = false; }, 800);
+        }
+
+        // أحداث الأزرار
+        const upButtons = document.querySelectorAll('#carousel-up, #mobile-up');
+        const downButtons = document.querySelectorAll('#carousel-down, #mobile-down');
+
+        upButtons.forEach(btn => btn.addEventListener('click', () => updateCarousel(currentIndex - 1)));
+        downButtons.forEach(btn => btn.addEventListener('click', () => updateCarousel(currentIndex + 1)));
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => updateCarousel(i));
+        });
+
+        cards.forEach((card, i) => {
+            card.addEventListener('click', () => updateCarousel(i));
+        });
+
+        // أحداث لوحة المفاتيح
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "ArrowUp") updateCarousel(currentIndex - 1);
+            else if (e.key === "ArrowDown") updateCarousel(currentIndex + 1);
+        });
+
+        // بدء التشغيل
+        updateCarousel(0);
+    </script>
 </body>
-</html>
+            </html>
