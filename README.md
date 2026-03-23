@@ -1,20 +1,13 @@
-# XPayStore Website
+# XPayStore - الموقع الرسمي
 
-Static landing page for XPayStore – premium digital solutions.
+موقع تعريفي لخدمات XPayStore، تم تطويره بلغة HTML/CSS/JS ويعمل على Vercel.
 
-## 🚀 Deployment on Vercel
+## الروابط المباشرة
+- الصفحة الرئيسية: `index.html`
+- سياسة الخصوصية: `privacy.html`
+- شروط الخدمة: `terms.html`
 
-1. Push this repository to GitHub.
-2. Log in to [Vercel](https://vercel.com) and import the repository.
-3. Vercel will automatically detect it's a static site and deploy.
-4. Your site will be live at `your-project.vercel.app`.
-
-## 🛠 Local Development
-
-Simply open `index.html` in any browser.
-
-## 📝 Notes
-
-- Built with Tailwind CSS (CDN) and Google Fonts.
-- Fully responsive, dark mode enabled by default.
-- All external links use `#0` as placeholder – replace with actual URLs.
+## النشر على Vercel
+1. ارفع الملفات إلى مستودع GitHub.
+2. استورد المستودع في Vercel.
+3. سيتم النشر تلقائياً.
